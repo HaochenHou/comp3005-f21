@@ -1,0 +1,43 @@
+extends layout
+
+block content 
+  h1 Add Book Form
+  
+  .form-wrapper
+    form#form 
+      .form-group 
+        label Name:
+        input#name(type="text",name="name")
+      .form-group 
+        label Author:
+        input#author(type="text",name="author")
+      .form-group 
+        label ISBN:
+        input#ISBN(type="text",name="ISBN")
+      .form-group 
+        label Genre:
+        input#genre(type="text",name="genre")
+      .form-group 
+        label Price:
+        input#genre(type="text",name="price")
+      .form-group 
+        label Pages:
+        input#genre(type="text",name="pages")
+      .form-group 
+        label Publisher Name: 
+        input#genre(type="text",name="publisherName")
+      .form-group 
+        label Publisher Address: 
+        input#genre(type="text",name="publisherAddress")
+      .form-group 
+        label Publisher Email: 
+        input#genre(type="text",name="publisherEmail")
+      .form-group 
+        label Publisher Phone Number: 
+        input#genre(type="text",name="publisherPhoneNumber")
+      .form-group 
+        label Publisher Banking Account: 
+        input#genre(type="text",name="publisherBankingAccount")
+      button(type="button",onclick="addBook();") Add book
+
+  script(src='/javascripts/book.js')

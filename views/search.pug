@@ -1,0 +1,16 @@
+extends layout
+
+block content 
+  h1 Search Results
+
+  if books.length > 0
+    .book-list
+      each book in books 
+        .book-list-item 
+          p: a(href="/books/detail/" + book.id) #{book.name} 
+          p Author: #{book.author}
+          p ISBN: #{book.ISBN}
+          p Genre: #{book.genre}
+  else 
+    p No books match.
+    

@@ -1,0 +1,27 @@
+doctype html
+html
+  block head
+    title= title
+    //- link(rel='stylesheet', href='/libs/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/layout.css')
+    script(src='/libs/jquery.js')
+    script(src='/javascripts/index.js')
+    //- script(src='/libs/bootstrap.min.js')
+  body
+    block header 
+      .nav-bar 
+        .left-panel 
+          a(href="/") Browse Books
+        .right-panel 
+          if !loggedin
+            a(href="/login") Login
+            a(href="/register") Register
+          else if user.role === 'CUSTOMER'
+            a(href="/baskets") Baskets
+            //- a(href="/orders") Order
+          else 
+            a(href="/books/management") Books Management
+          if loggedin 
+            a(href="/api/logout") Logout
+    block content

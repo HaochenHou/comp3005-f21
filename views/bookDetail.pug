@@ -1,0 +1,13 @@
+extends layout
+
+block content 
+  input#bookId(type="hidden",value=book.id)
+  h2 #{book.name}
+  p Author: #{book.author}
+  p ISBN: #{book.ISBN}
+  p Genre: #{book.genre}
+  p Price: #{book.price}
+  p Pages: #{book.pages}
+  button(type="button",onclick="addToBasket();") Add to Basket
+  
+  script(src='/javascripts/book.js')

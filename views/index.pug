@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  .search-wrapper
+    input#searchValue(type="text",placeholder="Search by book name, author name, ISBN, genre, etc..")
+    button(onclick="search();") Search
+
+  if books.length > 0
+    .book-list
+      each book in books 
+        .book-list-item 
+          .info
+            p
+              a(href="/books/detail/" + book.id)= book.name  
+            p= book.author
+            p.price= 'price:' + book.price

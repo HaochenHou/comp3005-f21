@@ -1,0 +1,17 @@
+extends layout
+
+block content 
+  h1 Baskets
+
+  if list.length > 0
+    .book-list
+      each item in list 
+        .book-list-item 
+          .info
+            input(type="hidden", name="basketId", value=item.id)
+            p: a(href="/books/detail/" + item.id)= item.name
+            p Price: #{item.price}
+    button(onclick="submitOrder();") Submit Order
+  else 
+    p Your Basket is empty.
+    

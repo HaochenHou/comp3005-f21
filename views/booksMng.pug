@@ -1,0 +1,23 @@
+extends layout
+
+block content 
+  h1 Book Management
+  a(href="/books/form") Add Book 
+  if books.length > 0
+    .book-list
+      each book in books 
+        .book-list-item 
+          .info
+            h3= book.name  
+            p Author: #{book.author}
+            p ISBN: #{book.ISBN}
+            p Genre: #{book.genre}
+            p Price: #{book.price}
+            p Pages: #{book.pages}
+            p Publisher Name: #{book.publisher_name}
+            p Publisher Address: #{book.publisher_address}
+            p Publisher Email: #{book.publisher_email}
+            p Publisher Phone Number: #{book.publisher_phone_number}
+            p Publisher Banking Account: #{book.publisher_banking_account}
+            button(type="button", onclick=`deleteBook('${book.id}')`) Delete
+  script(src='/javascripts/book.js')

@@ -1,0 +1,12 @@
+extends layout
+
+block content 
+  .form-wrapper
+    form#form 
+      .form-group
+        label.form-label Username:  
+        input.form-control(type="text",name="username")
+      .form-group
+        label.form-label Password: 
+        input.form-control(type="password",name="password")
+      button.btn(type="button",onclick="login();") Login
